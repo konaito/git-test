@@ -17,6 +17,5 @@ jobs:
         uses: diillson/auto-pull-request@v1
         with:
           destination_branch: main
-          pr_draft: true                    # Draft PR にする場合
           pr_title: "${{ github.ref_name }} → main"
           pr_body: "自動生成 PR です。"
