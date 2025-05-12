@@ -1,0 +1,20 @@
+# .github/workflows/auto-pr.yml
+name: Open PR on new branch push
+
+on:
+  push:
+    branches-ignore: [main]   # main への push では実行しない
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        uses: diillson/auto-pull-request@v1
+        with:
+          destination_branch: main
+          pr_draft: true                    # Draft PR にする場合
+          pr_title: "🚀 ${GITHUB_REF_NAME} → main"
+          pr_body: "自動生成 PR です。"
