@@ -19,3 +19,4 @@ jobs:
           destination_branch: main
           pr_title: "${{ github.ref_name }} → main"
           pr_body: "自動生成 PR です。"
+          pr_reviewer: "Copilot"
